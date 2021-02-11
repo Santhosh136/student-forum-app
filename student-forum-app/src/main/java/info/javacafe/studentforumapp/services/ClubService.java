@@ -1,0 +1,30 @@
+package info.javacafe.studentforumapp.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import info.javacafe.studentforumapp.dto.ClubDto;
+import info.javacafe.studentforumapp.entities.Club;
+import info.javacafe.studentforumapp.repositories.ClubRepository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class ClubService {
+
+    @Autowired
+    private ClubRepository clubRepository;
+
+    public List<ClubDto> findAllClubData() {
+        List<ClubDto> clubData = new ArrayList<>();
+        for(Club club: clubRepository.findAll()) {
+            clubData.add(new ClubDto(club.getName(), club.getDescription(), club.getImageId()));
+        }
+        return clubData;
+    }
+
+    public void save(Club club) {
+        clubRepository.save(club);
+    }
+}

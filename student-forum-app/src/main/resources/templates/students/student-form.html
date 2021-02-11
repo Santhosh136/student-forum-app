@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Forum</title>
+</head>
+<body>
+    <form action="/students/save" th:object="${student}" method="POST">
+        <label>Regno:</label>
+        <input type="text" th:field="*{regNo}"><br>
+        <label>First Name:</label>
+        <input type="text" th:field="*{firstName}"><br>
+        <label>Last Name:</label>
+        <input type="text" th:field="*{lastName}"><br>
+        <label>Email:</label>
+        <input type="text" th:field="*{email}"><br>
+        <label>Department:</label>
+        <input type="text" th:field="*{department}"><br>
+        <input type="submit" value="Add Student">
+        <button type="reset">Reset</button>
+    </form>
+</body>
+</html>

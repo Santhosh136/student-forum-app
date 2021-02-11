@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head><title>Activity Form</title></head>
+    <body>
+        <form action="/students/save-activity" method="POST" th:object="${newActivity}">
+            <label>Activity:</label>
+            <input type="text" th:field="*{activity}">
+            <button type="submit">Add activity</button>
+        </form>
+    </body>
+
+</html>

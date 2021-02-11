@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layouts::header"></head>
+
+<body>
+    <nav th:replace="layouts::navbar"></nav>
+    <section class="top-section container">
+        <div class="row row-cols-2">
+            <div class="col p-2">
+                <h1>Students' Forum for extra-curricular activities</h1>
+                <h2>Department of Information Technology</h2>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="middle-section container">
+        <h2>Our College Clubs</h2>
+        <div  class="row row-cols-1 row-cols-md-3 g-4 m-3">
+            <div class="col" th:each="club : ${clubs}">
+                <div class="card text-dark my-primary mb-3 shadow-lg rounded" style="max-width: 18rem;">
+                    <img th:src="@{'/images/' + ${club.imageId}}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 th:text="${club.name}" class="card-title">Card title</h5>
+                        <p th:text="${club.description}" class="card-text">This is a description.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

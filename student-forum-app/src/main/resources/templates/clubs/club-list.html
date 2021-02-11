@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="layouts::header"></head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>President</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="club : ${clubs}">
+                    <td th:text="${club.name}"></td>
+                    <td th:text="${club.presidentName}"></td>
+                    <td th:text="${club.description}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+.top-section {
+  height: 80vh;
+  background-image: url('students-new.jpg');
+  background-size: auto 400px;
+  background-position: right;
+  background-repeat: no-repeat;
+  margin-top: 5%;
+}
+
+.top-section h1 {
+  font-family: 'Inter', sans-serif;
+  color: #374045;
+  font-size: 50px;
+}
+
+h2 {
+  font-family: 'Inter', sans-serif;
+  color: #374045;
+  margin-top: 5%;
+  
+}
+
+.middle-section {
+  width: 100%;
+  height: 100vh;
+}
+
+.my-primary {
+  background-color: #f5f4f4;
+}
+
+.my-btn-primary {
+  border: 1px solid black;
+  background-color: #f8f9fa;
+  border-color: #007965;
+  color: #007965;
+  font-size: 16px;
+  cursor: pointer;
+}
+.my-btn-primary:hover {
+  background-color: #007965;
+  color: white;
+}
