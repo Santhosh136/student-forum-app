@@ -20,9 +20,7 @@ public class Activity {
     @ManyToOne()
     private Student student;
 
-    public Activity() {
-        this.date = new Date(2020, 2, 2);
-    }
+    public Activity() {}
 
     public Date getDate() {
         return date;
