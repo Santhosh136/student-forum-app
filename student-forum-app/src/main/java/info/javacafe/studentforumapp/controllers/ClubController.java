@@ -17,7 +17,7 @@ public class ClubController {
 
     @GetMapping("/display")
     public String displayAll(Model model) {
-        model.addAttribute("clubs", clubService.findAllClubData());
+        model.addAttribute("clubs", clubService.findAll());
         return "clubs/club-list";
     }
 }

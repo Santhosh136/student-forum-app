@@ -78,7 +78,7 @@ public class Student {
                 + lastName + ", regNo=" + regNo + "]";
     }
 
-    public List<Activity> getActivities() {
-        return activities;
-    }
+    // public List<Activity> getActivities() {
+    //     return activities;
+    // }
 }

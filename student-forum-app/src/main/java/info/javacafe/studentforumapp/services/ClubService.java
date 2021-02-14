@@ -24,6 +24,12 @@ public class ClubService {
         return clubData;
     }
 
+    public List<Club> findAll() {
+        List<Club> clubs = new ArrayList<>();
+        clubRepository.findAll().forEach(clubs::add);
+        return clubs;
+    }
+
     public void save(Club club) {
         clubRepository.save(club);
     }

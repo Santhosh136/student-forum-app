@@ -2,7 +2,6 @@ package info.javacafe.studentforumapp.services;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import info.javacafe.studentforumapp.entities.Student;
 import info.javacafe.studentforumapp.repositories.StudentRepository;
@@ -22,8 +21,8 @@ public class StudentService {
         return students;
     }
 
-    public Optional<Student> findById(String regNo) {
-        return studentRepository.findById(regNo);
+    public Student findById(String regNo) {
+        return studentRepository.findByRegNo(regNo);
     }
 
     public void save(Student student) {

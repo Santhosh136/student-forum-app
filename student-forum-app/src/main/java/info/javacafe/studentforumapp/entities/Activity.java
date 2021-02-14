@@ -1,7 +1,5 @@
 package info.javacafe.studentforumapp.entities;
 
-import java.sql.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,7 +12,6 @@ public class Activity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private Date date;
     private String activity;
 
     @ManyToOne()
@@ -22,12 +19,8 @@ public class Activity {
 
     public Activity() {}
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
+    public Activity(String activity) {
+        this.activity = activity;
     }
 
     public String getActivity() {
@@ -42,6 +35,10 @@ public class Activity {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public Student getStudent() {
         return student;
     }
@@ -49,6 +46,9 @@ public class Activity {
     public void setStudent(Student student) {
         this.student = student;
     }
-    
 
+    @Override
+    public String toString() {
+        return "Activity [activity=" + activity + ", id=" + id + ", student=" + student + "]";
+    }
 }
