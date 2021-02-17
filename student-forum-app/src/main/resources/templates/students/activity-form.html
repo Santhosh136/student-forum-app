@@ -3,6 +3,11 @@
     <head><title>Activity Form</title></head>
     <body>
         <form action="/students/activity/save" th:object="${activity}" method="POST" >
+            <label>Club:</label>
+            <select name="clubId">
+                <option value="select">select</option>
+                <option th:each="club : ${clubData}" th:value="${club.id}" th:text="${club.name}" >select</option>
+            </select>
             <label>Activity:</label>
             <input type="text" th:field="${activity.activity}">
             <button type="submit">Add activity</button>

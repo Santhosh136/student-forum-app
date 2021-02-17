@@ -1,14 +1,22 @@
 package info.javacafe.studentforumapp.dto;
 
 public class ClubDto {
+    private int id;
     private String name;
     private String description;
     private String imageId;
 
-    public ClubDto(String name, String description, String imageId) {
+    public ClubDto() {}
+
+    public ClubDto(int id, String name, String description, String imageId) {
+        this.id = id;
         this.name = name;
         this.description = description;
         this.imageId= imageId;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
