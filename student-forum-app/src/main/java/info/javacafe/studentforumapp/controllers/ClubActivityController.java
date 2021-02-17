@@ -4,35 +4,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import info.javacafe.studentforumapp.entities.Activity;
-import info.javacafe.studentforumapp.services.ActivityService;
+import info.javacafe.studentforumapp.entities.ClubActivity;
+import info.javacafe.studentforumapp.entities.Student;
+import info.javacafe.studentforumapp.services.ClubActivityService;
 import info.javacafe.studentforumapp.services.StudentService;
 
 @Controller
 @RequestMapping("/students/activity")
-public class ActivityController {
+public class ClubActivityController {
     @Autowired
-    private ActivityService activityService;
+    private ClubActivityService clubActivityService;
 
     @Autowired
     private StudentService studentService;
-    
-    @GetMapping("/new-activity") 
+
+    @GetMapping("/new")
     public String displayForm(Model model) {
-        model.addAttribute("activity", new Activity());
+        model.addAttribute("activity", new ClubActivity());
         return "students/activity-form";
     }
 
-    @PostMapping("/save-activity")
-    public String saveActivity(@ModelAttribute("activity") Activity activity){
+    @PostMapping("/save")
+    public String saveActivity(ClubActivity clubActivity ) {
+        Student student = studentService.findById("136");
+        clubActivity.setStudent(student);
 
-        activity.setStudent(studentService.findById("136"));;
-
-        activityService.save(activity);
-        return "redirect:/students/activity/new-activity";
+        clubActivityService.save(clubActivity);
+        return "redirect:/students/activity/new";
     }
 }

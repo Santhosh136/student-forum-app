@@ -17,7 +17,7 @@ public class Student {
     private String email;
 
     @OneToMany(mappedBy = "student")
-    private List<Activity> activities;
+    private List<ClubActivity> activities;
 
     @ManyToMany(mappedBy = "memberStudents")
     private List<Club> memberClubs;
@@ -70,6 +70,22 @@ public class Student {
 
     public void setRegNo(String regNo) {
         this.regNo = regNo;
+    }
+
+    public List<ClubActivity> getActivities() {
+        return activities;
+    }
+    
+    public void setActivities(List<ClubActivity> activities) {
+        this.activities = activities;
+    }
+
+    public List<Club> getMemberClubs() {
+        return memberClubs;
+    }
+
+    public void setMemberClubs(List<Club> memberClubs) {
+        this.memberClubs = memberClubs;
     }
 
     @Override

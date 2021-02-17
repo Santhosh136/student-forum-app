@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Club {
@@ -21,6 +22,9 @@ public class Club {
 
     @ManyToMany
     private List<Student> memberStudents;
+
+    @OneToMany(mappedBy = "club")
+    private List<ClubActivity> clubActivities;
 
     public Club() {}
 

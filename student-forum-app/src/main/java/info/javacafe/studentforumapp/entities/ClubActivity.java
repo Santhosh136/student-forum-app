@@ -5,29 +5,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+
 
 @Entity
-public class Activity {
+public class ClubActivity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String activity;
 
-    @ManyToOne()
+    @ManyToOne
     private Student student;
 
-    public Activity() {}
+    @ManyToOne
+    private Club club;
 
-    public Activity(String activity) {
-        this.activity = activity;
-    }
+    public ClubActivity() {}
 
-    public String getActivity() {
-        return activity;
-    }
-
-    public void setActivity(String activity) {
+    public ClubActivity(String activity) {
         this.activity = activity;
     }
 
@@ -39,6 +36,14 @@ public class Activity {
         this.id = id;
     }
 
+    public String getActivity() {
+        return activity;
+    }
+
+    public void setActivity(String activity) {
+        this.activity = activity;
+    }
+
     public Student getStudent() {
         return student;
     }
@@ -46,9 +51,5 @@ public class Activity {
     public void setStudent(Student student) {
         this.student = student;
     }
-
-    @Override
-    public String toString() {
-        return "Activity [activity=" + activity + ", id=" + id + ", student=" + student + "]";
-    }
+    
 }

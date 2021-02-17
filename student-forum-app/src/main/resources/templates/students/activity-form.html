@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <head><title>Activity Form</title></head>
     <body>
-        <form action="/students/activity/save-activity" th:object="${activity}" method="POST" >
+        <form action="/students/activity/save" th:object="${activity}" method="POST" >
             <label>Activity:</label>
             <input type="text" th:field="${activity.activity}">
             <button type="submit">Add activity</button>
